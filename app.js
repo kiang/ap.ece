@@ -106,12 +106,12 @@ function fetchData() {
   
   let newData = $(".kdCard-txt")
     .map((n, obj) => {
+      let recordId = $(obj).find(".icon-map").attr("onclick").split("=")[5] + "=";
       return {
+        id: recordId,
         school: $(obj).find("h4").text(),
         url:
-          "https://ap.ece.moe.edu.tw/webecems/dtl/punish_view.aspx?sch=" +
-          $(obj).find(".icon-map").attr("onclick").split("=")[5] +
-          "=",
+          "https://ap.ece.moe.edu.tw/webecems/dtl/punish_view.aspx?sch=" + recordId,
         city: $(obj).find('span').eq(1).text(),
         area: $(obj).find('span').eq(2).text(),
         pubType: $(obj).find('span').eq(3).text(),
