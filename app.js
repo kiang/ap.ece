@@ -2,6 +2,13 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 const FormData = require("form-data");
 const jsonfile = require("jsonfile");
+const fs = require('fs');
+const rawDir = './raw';
+
+if (!fs.existsSync(rawDir)) {
+  fs.mkdirSync(rawDir);
+}
+
 let __VIEWSTATE = "";
 let __EVENTVALIDATION = "";
 let cityCode = "";
@@ -9,12 +16,14 @@ let url = `https://ap.ece.moe.edu.tw/webecems/punishSearch.aspx`;
 let result = [];
 let body = "";
 let cityArr = [];
+let currentPage = 1;
+let currentCity = '';
 
 (async () => {
   await init();
   for (let city of cityArr) {
     if (city) {
-      //   console.log(city);
+      //console.log(city);
       await getList(city.toString().padStart(2, "0"));
     }
   }
@@ -37,6 +46,8 @@ function setState() {
 }
 
 async function getList(city) {
+  currentCity = city;
+  currentPage = 1;
   cityCode = city;
 
   let data = new FormData();
@@ -79,12 +90,19 @@ async function nextPage() {
   setState();
   fetchData();
   if (isNext()) {
+    ++currentPage;
     await nextPage();
   }
 }
 
 function fetchData() {
   let $ = cheerio.load(body);
+  fs.writeFile(rawDir + '/' + currentCity + '_' + currentPage + '.html', body, function(err) {
+    if(err) {
+      console.log(err);
+    }
+  });
+  
   let newData = $(".kdCard-txt")
     .map((n, obj) => {
       return {
