@@ -98,11 +98,11 @@ async function nextPage() {
 
 function fetchData() {
   let $ = cheerio.load(body);
-  fs.writeFile(rawDir + '/' + currentCity + '_' + currentPage + '.html', body, function(err) {
-    if(err) {
-      console.log(err);
-    }
-  });
+  // fs.writeFile(rawDir + '/' + currentCity + '_' + currentPage + '.html', body, function(err) {
+  //   if(err) {
+  //     console.log(err);
+  //   }
+  // });
   
   let newData = $(".kdCard-txt")
     .map((n, obj) => {
