@@ -3,6 +3,7 @@ const cheerio = require("cheerio");
 const FormData = require("form-data");
 const jsonfile = require("jsonfile");
 const fs = require('fs');
+const { exit } = require("process");
 const rawDir = './raw';
 
 if (!fs.existsSync(rawDir)) {
@@ -111,6 +112,13 @@ function fetchData() {
           "https://ap.ece.moe.edu.tw/webecems/dtl/punish_view.aspx?sch=" +
           $(obj).find(".icon-map").attr("onclick").split("=")[5] +
           "=",
+        city: $(obj).find('span').eq(1).text(),
+        area: $(obj).find('span').eq(2).text(),
+        pubType: $(obj).find('span').eq(3).text(),
+        address: $(obj).find('a').eq(0).text(),
+        telephone: $(obj).find('span').eq(4).text(),
+        count_children: $(obj).find('span').eq(5).text(),
+        status: $(obj).find('span').eq(6).text()
       };
     })
     .get();
