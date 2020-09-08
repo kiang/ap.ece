@@ -98,15 +98,15 @@ async function nextPage() {
 
 function fetchData() {
   let $ = cheerio.load(body);
-  // fs.writeFile(rawDir + '/' + currentCity + '_' + currentPage + '.html', body, function(err) {
-  //   if(err) {
-  //     console.log(err);
-  //   }
-  // });
+  fs.writeFile(rawDir + '/' + currentCity + '_' + currentPage + '.html', body, function(err) {
+    if(err) {
+      console.log(err);
+    }
+  });
   
   let newData = $(".kdCard-txt")
     .map((n, obj) => {
-      let recordId = $(obj).find(".icon-map").attr("onclick").split("=")[5] + "=";
+      let recordId = $(obj).find(".icon-map").attr("onclick").split("=")[5].split("','")[0];
       return {
         id: recordId,
         school: $(obj).find("h4").text(),
