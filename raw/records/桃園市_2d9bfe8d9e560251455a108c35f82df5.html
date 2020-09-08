@@ -1,0 +1,233 @@
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /><meta http-equiv="Pragma" content="no-cache" /><meta http-equiv="Expires" content="-1" /><title>
+	裁罰結果檢視
+</title><link rel="stylesheet" href="https://www.ece.moe.edu.tw/export/system/modules/com.thesys.project.ece/resources/css/style.css" /><link rel="stylesheet" href="../css/eceStyleSheet.css" />
+    <style>
+        a:hover{text-decoration: underline;}
+        .modalBackground {
+	        background-color:Gray;
+	        filter:alpha(opacity=70);
+	        opacity:0.7;
+        }
+    </style>
+<link href="/webecems/WebResource.axd?d=hcXDZhXiidgsQUtEo5iT396euMDujhvD7ukLb8uBHsatX-5GV4kUWXyLrDavWPWzTGwvTGUNCOZOW2lnEi7pITudrqll3zHWBb6sYNVpkR-UFxuYYe1G_cM4jD_6ErBOYqCuos4zCOcw7loa5GGUw22y-cM1&amp;t=636366873052995923" type="text/css" rel="stylesheet" /></head>
+<body>
+    <form method="post" action="./punish_view.aspx?sch=RwBNAEkAWABkAE0AUQBOAHIAZwBGAHIAdQBvAFcAcABWADIASgA3AE4AeQBMAGEATQBwAFEAagBQAFAAegAzADgAVwBXAG0AUQAwAHkAegBuACsANABRAGkAQwByAEIAbQBFAEIAagB4ADgAYgBTAFgAMgA2AEYAcwBTAEMAdwBqAEwAQQBVAHIAVQBOAEoARgBZAHYAagBPADQAdgBaACsAaQBUAHQAWQBLAHQAbQBLADkAYQAzAHIAbgB6AHYAbAA1AEoAeABjAFUATQBOADgARAA0AD0A" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+
+
+<script src="/webecems/ScriptResource.axd?d=IPTNKRFHNyWsoUDGV89fzi-0SLfo2q56IULe4vOSG6WPAAZ8M5duSJkAloau57NPaMkPtLaBZ4YBCZTTG72E1FfjG8f24oqe1odZONumMHLKynZPyptoXBEE1C-MCanr8ehb_4VFGdKXCIuqyC7eYcKYStc1&amp;t=ffffffffce034dab" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=Y3m6UrVMbqJVE-kQ9gioH2o0qXi6zSkErBV3dPz5NN7v7qLRpTUBeQN-WLXYpwEh84gCb3hkr9DMnAn7qdyfO-yYIBP0vwaEu6D4N_iI7YA7yd7Z0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=gWcrHB-EGC1p4LtZa-lbj2eg5QJUC9yO4XSsJCr8FvDcKHbmEY2vcey3o7cPl8eYKS6b1YkiMkyRD9jiNyfVgJPC8rk1&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=YGQkKErHFDdGeCMY44uk_gKyKSxG5xPMLgY6gw5_nj-HF5sDd_OoC_OP3Lt_HQ8MA2f7Q16XY5BpJ5JDOckG3TsHEXqusoYlm3qJgWPLtTxnRbs_0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=_sGp8_9bNHYNyQqxdvQRqYHGQ68ouSP8PBRfViXnJskWC-06SxjBV7ZZk4H1L1HBG2uaN1VnN1gGWixKokoADQthqwlBUvV4lRKMv6t2PZBGKyc10&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=cIIHhetD0FO8FyFjoi6ghafiz2Ws13MyFUUuyMAy8oLCuwHfwiQ-KBAy7mpQizgH0zrrnmB_BPUfeCUx0s-Bu2jFGZ6oHYQABHGrjkNwNrkxo5PW0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=zhB4TnNg5SCnTud0nPZV0GoTG7MB0R8DOyYGIQFCiN8nKBxS1oVuiH-q84TcP8QdexdPTlc9Bnnyb6IqXB7XMcl04k_23kdrZwtsuW9VnvvhHTux0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=leIq-rn6Nim8cPSe84CIAvH--liRifeqW42SJt2bCKlaqXd-5OTIT4mCE1fgok7iiCjqGR-gr0w3Sh5pmfPQ7ajX6fgtwk_sy_0Q8f78LENT8yCX0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=6T0HpFRcmR5soosVgefabQ9HMufnVjNelj9ChNo2Jc4zcgiAKH9pGjgTnsYQkCm-zPpAD3uFJvWIvbBm5clBa1blehVLCKr3B1aGFMuLwkuuBIIc0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=I7Upt9kFVtBZiqZm-4CpKqOCeRMV2I_ReSnDyzOcIrpf07N-0G0Y2Dja_LaTffvtATd1PGkisQV2qBqjlIosTAA-Ecu8MSnwOBqKi5QaE6EUFqEq0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=0ZrMKVP2U7wQDZQ-62KUNS-QDqyiBPbR1sK2fktMUvir6-yKu9TXrbIT4R3diXSZslnOcHAX9YxcMERdcNWGoc23NeyYGMRRsOEPRverZL7cmyno0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=SbtnVWs8LtdvW3GxieYZleraWULX2YEExiguEz8nZzLgIYkfyOfFwFTS5c4gNfJ9PHyMpuBMvAdGigsMgkb2872tR21SXUQ3FiRlfo7nGekORteH0&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=2GkmNxDF8rvhdbEDDwPqmqncXdGI0FiZHeQ9keV8YBZmfxzWrWVWHAPNGRMJQ3cBvK8TQIhj6ya1IVKCONt8ULTNKaFR0897dm16D7th_VpRDPm60&amp;t=2009a88" type="text/javascript"></script>
+<script src="/webecems/ScriptResource.axd?d=IfGYeQzgq1x-pZCFZaGdA3vFF9fsg_mBkQchCwaxJHM7FUY4KWZ-v4B52KxWBpQsbAXBFa7ekg97_tdWTcKWO5Kn9RqH_Y-H53yJsVojB206mEFc0&amp;t=2009a88" type="text/javascript"></script>
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="BBFBD0D1" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="RUdfTkHfR7oCHt/IJnYvgZmCIqPYJUU9fZlG5G4RCy3TZ9/kfrxILLjGxH5oyT/xunIJhimiOOM548jQsHRGN7Ztqf+HPSjBZmKHz7z3TmhZQzW9gENvPsYHJwFObq3CkID9CYcmfzOLNU3LU8dd65JC4xUsrtjOu0iUuRU1PWp+Pw8YoKK2Z5+ZothkiqaPcohqiVWUXXdgg9OxpvtEf7PyrUIIi4KZ6WmtVFvhz9bkRTu3XM7PamduN61dwxbA/SgId1ZA2tpXSxL5u+JiAYq0JEoi7epIfZ51Yc0s9rj3Nxf4HIrnb+0sbrZ8o9fBuRDIOM6teHQKiyUbrgHFmzQDagM=" />
+        
+        <div id="mainPanel">
+	
+		    <table style="width:99%; border:none; margin:auto; margin-top:10px;">
+                <tr>
+                    <td style="text-align:center;">
+                        <div class="schName"><span id="lblSchName">桃園市私立凱思堡幼兒園</span><br /><span id="lblTitle">裁罰結果</span></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:center;">
+		                <div>
+		<table class="aptable" cellspacing="0" cellpadding="0" rules="all" bordercolor="#000FFF" id="GridView1">
+			<tr class="listHd_c">
+				<th align="center" scope="col" width="10%">處分日期</th><th align="center" scope="col" width="20%">裁處文號</th><th align="center" scope="col">處分依據</th><th align="center" scope="col" width="19%">違反之規定</th><th align="center" scope="col" width="12%">負責人/行為人</th><th align="center" scope="col" width="16%">處分內容</th>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_0">2020/01/06</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_0">府教幼字字第1080332560號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_0">幼兒教育及照顧法<br>第49條(107/6/27修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <a id="GridView1_lbPDetail_0" title="顯示法規內容" href="javascript:__doPostBack(&#39;GridView1$ctl02$lbPDetail&#39;,&#39;&#39;)">第29條第1項</a>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_0">負責人：王新秀</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_0">罰鍰：6,000&nbsp;元</span>
+                                    </td>
+			</tr><tr bgcolor="WhiteSmoke">
+				<td align="center">
+                                        <span id="GridView1_lblPDate_1">2020/01/06</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_1">府教幼字字第1080332560號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_1">幼兒教育及照顧法<br>第51條(107/6/27修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <a id="GridView1_lbPDetail_1" title="顯示法規內容" href="javascript:__doPostBack(&#39;GridView1$ctl03$lbPDetail&#39;,&#39;&#39;)">第16條第1項</a>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_1">負責人：王新秀</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_1">罰鍰：15,000&nbsp;元</span>
+                                    </td>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_2">2020/01/06</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_2">府教幼字字第1080332560號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_2">幼兒教育及照顧法<br>第51條(107/6/27修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <a id="GridView1_lbPDetail_2" title="顯示法規內容" href="javascript:__doPostBack(&#39;GridView1$ctl04$lbPDetail&#39;,&#39;&#39;)">第41條第2項</a>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_2">負責人：王新秀</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_2">罰鍰：3,000&nbsp;元</span>
+                                    </td>
+			</tr><tr bgcolor="WhiteSmoke">
+				<td align="center">
+                                        <span id="GridView1_lblPDate_3">2019/09/04</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_3">府教幼字第1080221451號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_3">幼兒教育及照顧法<br>第47條第1項(107/6/27修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <a id="GridView1_lbPDetail_3" title="顯示法規內容" href="javascript:__doPostBack(&#39;GridView1$ctl05$lbPDetail&#39;,&#39;&#39;)">第15條第3項</a>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_3">負責人：王新秀</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_3">罰鍰：30,000&nbsp;元</span>
+                                    </td>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_4">2019/09/04</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_4">府教幼字第1080221451號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_4">幼兒教育及照顧法<br>第51條(107/6/27修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <a id="GridView1_lbPDetail_4" title="顯示法規內容" href="javascript:__doPostBack(&#39;GridView1$ctl06$lbPDetail&#39;,&#39;&#39;)">第16條第1項</a>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_4">負責人：王新秀</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_4">罰鍰：15,000&nbsp;元</span>
+                                    </td>
+			</tr><tr bgcolor="WhiteSmoke">
+				<td align="center">
+                                        <span id="GridView1_lblPDate_5">2019/09/04</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_5">府教幼字第1080221451號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_5">幼兒教育及照顧法<br>第51條(107/6/27修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <a id="GridView1_lbPDetail_5" title="顯示法規內容" href="javascript:__doPostBack(&#39;GridView1$ctl07$lbPDetail&#39;,&#39;&#39;)">第16條第4項</a>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_5">負責人：王新秀</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_5">罰鍰：3,000&nbsp;元</span>
+                                    </td>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_6">2019/09/04</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_6">府教幼字第1080221451號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_6">教保服務人員條例<br>第34條</span>
+                                    </td><td align="center">
+                                        
+                                        <a id="GridView1_lbPDetail_6" title="顯示法規內容" href="javascript:__doPostBack(&#39;GridView1$ctl08$lbPDetail&#39;,&#39;&#39;)">第26條第2項</a>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_6">負責人：王新秀</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_6">罰鍰：30,000&nbsp;元</span>
+                                    </td>
+			</tr><tr bgcolor="WhiteSmoke">
+				<td align="center">
+                                        <span id="GridView1_lblPDate_7">2019/07/09</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_7">府教幼字第1080165595號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_7">幼兒教育及照顧法<br>第49條(107/6/27修正公布)</span>
+                                    </td><td align="center">
+                                        
+                                        <a id="GridView1_lbPDetail_7" title="顯示法規內容" href="javascript:__doPostBack(&#39;GridView1$ctl09$lbPDetail&#39;,&#39;&#39;)">第8條第6項--招收人數限制</a>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_7">負責人：王新秀</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_7">罰鍰：6,000&nbsp;元</span>
+                                    </td>
+			</tr><tr>
+				<td align="center">
+                                        <span id="GridView1_lblPDate_8">2019/01/10</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPGNum_8">府教幼字第1080004227號</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPName_8">教保服務人員條例<br>第34條</span>
+                                    </td><td align="center">
+                                        
+                                        <a id="GridView1_lbPDetail_8" title="顯示法規內容" href="javascript:__doPostBack(&#39;GridView1$ctl10$lbPDetail&#39;,&#39;&#39;)">第26條第2項</a>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPObject_8">負責人：王新秀</span>
+                                    </td><td align="center">
+                                        <span id="GridView1_lblPContent_8">罰鍰：6,000&nbsp;元</span>
+                                    </td>
+			</tr>
+		</table>
+	</div>
+                    </td>
+                </tr>
+			    <tr>
+				    <td style="text-align:center;">
+		                <br />
+					    <input type="submit" name="btnExit" value="關　閉" onclick="window.close();return false;" id="btnExit" class="btn btn-primary" />
+                    </td>
+			    </tr>
+            </table>
+        
+</div>
+        <div id="MsgPanel" class="modalPopup" style="display: none;">
+	
+            <div id="divTitle" style="cursor:move; height:35px; text-align:center; padding-top:8px; border-top-left-radius:7px; border-top-right-radius:7px; vertical-align:middle; font-size:18px; font-weight:bold; background-color: rgb(204, 231, 251); border: 2px solid #96d5ef; color: rgb(0,30,140);">
+                法規內容
+            </div>
+            <div style="height:345px; vertical-align:top; font-size:12pt; color:#222; background:#e6ecd1; padding:10px; border: 2px solid #d0e38a; border-bottom-left-radius:7px; border-bottom-right-radius:7px; overflow:auto;">
+                <span id="lblMsg"></span>
+            </div>
+		    <div style="text-align:center;">
+                <input type="submit" name="btnClose" value="關　閉" id="btnClose" class="btn btn-primary" />
+		    </div>
+            
+            <input type="submit" name="btnChg" value="" id="btnChg" style="display:none;" />
+            <script type="text/javascript">
+                function chgOK() {
+                    var btnChg = document.getElementById("btnChg");
+                    btnChg.click();
+                }
+            </script>
+        
+</div>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.ModalPopupBehavior, {"backgroundCssClass":"modalBackground","cancelControlID":"btnClose","dynamicServicePath":"/webecems/dtl/punish_view.aspx","id":"ModalPopupMsg","okControlID":"btnChg","onOkScript":"chgOK()","popupControlID":"MsgPanel","popupDragHandleControlID":"divTitle","x":200,"y":100}, null, null, $get("btnChg"));
+});
+//]]>
+</script>
+</form>
+</body>
+</html>

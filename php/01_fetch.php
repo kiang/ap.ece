@@ -1,9 +1,5 @@
 <?php
 $basePath = dirname(__DIR__);
-require $basePath . '/vendor/autoload.php';
-use Symfony\Component\CssSelector\CssSelectorConverter;
-
-$converter = new CssSelectorConverter();
 
 $json = json_decode(file_get_contents($basePath . '/file.json'), true);
 $rawPath = $basePath . '/raw/records';
@@ -16,30 +12,32 @@ if(!file_exists($dataPath)) {
 }
 $oFh = array();
 foreach($json AS $record) {
-    $recordFile = $rawPath . '/' . $record['id'] . '.html';
+    $recordFile = $rawPath . '/' . $record['city'] . '_' . md5($record['id']) . '.html';
     if(!file_exists($recordFile)) {
         file_put_contents($recordFile, file_get_contents($record['url']));
     }
-    $doc = new DOMDocument();
-    $doc->loadHTML('<?xml encoding="utf-8" ?>' . file_get_contents($recordFile));
-    $xpath = new DOMXpath($doc);
-    $elements = $xpath->query($converter->toXPath('span'));
-
-    foreach($elements AS $element) {
-        $fieldKeys = explode('_', $element->getAttribute('id'));
-        if(isset($fieldKeys[1])) {
-            $record[$fieldKeys[1]] = $element->nodeValue;
+    $html = file_get_contents($recordFile);
+    $pos = strpos($html, '<td align="center">');
+    while(false !== $pos) {
+        $posEnd = strpos($html, '</tr>', $pos);
+        $table = substr($html, $pos, $posEnd - $pos);
+        $table = str_replace('&nbsp;', '', $table);
+        $parts = explode('</span>', $table);
+        foreach($parts AS $k => $v) {
+            $parts[$k] = substr($v, strrpos($v, '>') + 1);
         }
-    }
+        array_pop($parts);
+        $refPos = strpos($table, '<a id=');
+        $refPos = strpos($table, '>', $refPos) + 1;
+        $refPosEnd = strpos($table, '<', $refPos);
+        $parts[] = substr($table, $refPos, $refPosEnd - $refPos);
+        
+        if(!isset($oFh[$record['city']])) {
+            $oFh[$record['city']] = fopen($dataPath . '/' . $record['city'] . '.csv', 'w');
+            fputcsv($oFh[$record['city']], array('id', '學校', '資料網址', '縣市', '鄉鎮市區', '公私立', '住址', '電話', '核定人數', '營運狀態', '處分日期', '裁處文號', '違反之規定', '負責人/行為人', '處分內容', '處分依據'));
+        }
+        fputcsv($oFh[$record['city']], array_merge($record, $parts));
 
-    $elements = $xpath->query($converter->toXPath('a'));
-    foreach($elements AS $element) {
-        $record['ref'] = $element->nodeValue;
+        $pos = strpos($html, '<td align="center">', $posEnd);
     }
-
-    if(!isset($oFh[$record['city']])) {
-        $oFh[$record['city']] = fopen($dataPath . '/' . $record['city'] . '.csv', 'w');
-        fputcsv($oFh[$record['city']], array('id', '學校', '資料網址', '縣市', '鄉鎮市區', '公私立', '住址', '電話', '核定人數', '營運狀態', '處分日期', '裁處文號', '違反之規定', '負責人/行為人', '處分內容', '處分依據'));
-    }
-    fputcsv($oFh[$record['city']], $record);
 }
